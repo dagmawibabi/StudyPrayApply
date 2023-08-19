@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faInstagram, faLinkedinIn, faTelegramPlane, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faFacebookF, faGithub, faInstagram, faLinkedinIn, faTelegramPlane, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import configJSON from "../../public/config.json";
 
@@ -25,6 +25,10 @@ export default function Navigation() {
             "icon": faGithub,
             "link": configJSON.socials.github,
         },
+        {
+            "icon": faFacebookF,
+            "link": configJSON.socials.facebook,
+        },
     ]
 
     return (
@@ -41,15 +45,14 @@ export default function Navigation() {
                     {`Hi, I'm ${configJSON.username.toString()} 👋`}
                 </span>
             </Link>
-            <div className="w-36 flex justify-between mt-6
+            <div className="w-fit flex justify-between mt-6
                     sm:mt-6 xl:mb-6 2xl:mb-6
-                    sm:w-44 md:w-44 lg:w-44 xl:w-44 2xl:w-44
                 ">
                 {
                     socials.map((content, index) => {
                         return content.link != "" ?
                             <Link href={content.link} key={index} target="_blank">
-                                <FontAwesomeIcon icon={content.icon} className="text-zinc-500 hover:text-white hover:scale-125" width={23} height={23} />
+                                <FontAwesomeIcon icon={content.icon} className="text-zinc-500 mx-2 hover:text-white hover:scale-125" width={23} height={23} />
                             </Link> : <> </>
                     })
                 }

@@ -23,6 +23,7 @@ export default config({
           tiktok: fields.text({ label: "Tiktok" }),
           linkedin: fields.text({ label: "Linkedin" }),
           github: fields.text({ label: "Github" }),
+          facebook: fields.text({ label: "Facebook" }),
         }),
         blogs: fields.array(
           fields.object({
